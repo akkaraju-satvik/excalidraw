@@ -283,3 +283,27 @@ export const LiveCollaborationTrigger = ({
 };
 
 LiveCollaborationTrigger.displayName = "LiveCollaborationTrigger";
+
+export const SaveToServer = ({
+  onSelect,
+  isCollaborating,
+}: {
+  onSelect: () => void;
+  isCollaborating: boolean;
+}) => {
+  const { t } = useI18n();
+  return (
+    <DropdownMenuItem
+      data-testid="save-button"
+      icon={save}
+      className={clsx({
+        "active-collab": isCollaborating,
+      })}
+      onSelect={onSelect}
+    >
+      {t("buttons.saveToServer")}
+    </DropdownMenuItem>
+  );
+};
+
+SaveToServer.displayName = "SaveToServer";

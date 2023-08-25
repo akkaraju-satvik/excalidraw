@@ -8,10 +8,18 @@ export const AppMainMenu: React.FC<{
   isCollaborating: boolean;
   isCollabEnabled: boolean;
 }> = React.memo((props) => {
+  const saveToServer = () => {
+    console.info(localStorage.getItem("excalidraw"));
+  };
+
   return (
     <MainMenu>
       <MainMenu.DefaultItems.LoadScene />
       <MainMenu.DefaultItems.SaveToActiveFile />
+      <MainMenu.DefaultItems.SaveToServer
+        onSelect={saveToServer}
+        isCollaborating={props.isCollaborating}
+      />
       <MainMenu.DefaultItems.Export />
       <MainMenu.DefaultItems.SaveAsImage />
       {props.isCollabEnabled && (

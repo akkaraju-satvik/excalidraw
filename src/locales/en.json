@@ -140,6 +140,7 @@
     "export": "Save to...",
     "copyToClipboard": "Copy to clipboard",
     "save": "Save to current file",
+    "saveToServer": "Save to Server",
     "saveAs": "Save as",
     "load": "Open",
     "getShareableLink": "Get shareable link",
